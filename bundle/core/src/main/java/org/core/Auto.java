@@ -128,8 +128,11 @@ public class Auto implements HanggalRendelkezo{
 		return ajtokSzama;
 	}
 
-	public void setAjtokSzama(int ajtokSzama) {
-		this.ajtokSzama = ajtokSzama;
+	public void setAjtokSzama(int ajtokSzama) throws AjtokSzamaNemMegfelelo {
+		if (ajtokSzama < 0 || ajtokSzama >5) {
+			throw new AjtokSzamaNemMegfelelo(ajtokSzama);
+		}
+		this.ajtokSzama= ajtokSzama;
 	}
 
 	public Auto(String gyarto, String modell, String hengerurtartalom, String rendszam,
@@ -148,6 +151,10 @@ public class Auto implements HanggalRendelkezo{
 		this.valto = valto;
 		this.kivitel = kivitel;
 		this.ajtokSzama = ajtokSzama;
+	}
+	
+	public Auto() {
+		
 	}
 	
 	
