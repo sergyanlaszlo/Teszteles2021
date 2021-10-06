@@ -1,3 +1,4 @@
+package org.core;
 
 public interface HanggalRendelkezo {
 
